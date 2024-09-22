@@ -1,7 +1,5 @@
 // src/app/page.tsx
 
-// src/app/page.tsx
-
 import React from 'react';
 
 // Function to get access token and refresh token with expiration info
@@ -61,7 +59,7 @@ async function getAudioSaladAccessToken(refreshToken: string, accessId: string) 
 
 export default async function HomePage() {
   const audioSaladAccessId = '951bc470cb692d120faa6794cc985d7c0123e39a';
-  const audioSaladRefreshToken = 'b2c1712a940d12239c4af895e1d0ffdb97e6fce7ede26e9f055b88079444a0daa86177289c81d70dcae52dd91c957e52d341070b9bebb3e218c7ceaee10c5e4594d7b052f38780ba7d4065e81b7f0342';
+  const audioSaladRefreshToken = '115db488f31b648dc3b587a49d3cf801e292a5ddc005481b24c7889d027fb09e82e1ef77c2a56ca4a67e12e81f1a0c450d265055b5284ce1b6d50f4aaaf62d1726fc3c1a6ca107f98df5b46acd3b177b';
 
   try {
     // Step 1: Get the access token with expiration info
