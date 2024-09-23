@@ -124,7 +124,12 @@ export default async function HomePage() {
       </div>
     );
   } catch (error) {
-    console.error('Error fetching release IDs:', error.message); // TS needs to support undefined here
-    return <div>Error fetching release IDs: {error.message}</div>; // and here
+    if (error instanceof Error) {
+      console.error('Error fetching release IDs:', error.message);
+      return <div>Error fetching release IDs: {error.message}</div>;
+    } else {
+      console.error('Unknown error:', error);
+      return <div>An unknown error occurred.</div>;
+    }
   }
 }
