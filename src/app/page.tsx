@@ -75,7 +75,7 @@ async function getValidAccessToken(accessId: string) {
 
 // Function to fetch release IDs
 async function fetchReleaseIds(accessId: string) {
-  const tokenData = await getValidAccessToken(accessId);  // Ensure we have a valid access token
+  const tokenData = await getValidAccessToken(accessId);  // Ensure access token is valid
 
   const releaseIdsUrl = 'https://newworldrecords.dashboard.audiosalad.com/client-api/release-ids';
   const response = await fetch(`${releaseIdsUrl}?modified_start=2020-01-01T00:00:00Z&modified_end=${new Date().toISOString()}`, {
@@ -103,7 +103,7 @@ export default async function HomePage() {
 
   try {
     const releaseIds = await fetchReleaseIds(audioSaladAccessId);
-    const tokenData = await getValidAccessToken(audioSaladAccessId);  // Ensure we have a valid access token
+    const tokenData = await getValidAccessToken(audioSaladAccessId); // Ensure access token is valid
 
     return (
       <div>
@@ -124,7 +124,7 @@ export default async function HomePage() {
       </div>
     );
   } catch (error) {
-    console.error('Error fetching release IDs:', error.message);
-    return <div>Error fetching release IDs: {error.message}</div>;
+    console.error('Error fetching release IDs:', error.message); // TS needs to support undefined here
+    return <div>Error fetching release IDs: {error.message}</div>; // and here
   }
 }
